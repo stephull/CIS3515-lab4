@@ -2,16 +2,11 @@ package edu.temple.selectionactivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.GridLayout
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
+import android.view.*
+import android.widget.*
+import androidx.recyclerview.widget.*
 
 class SelectionActivity : AppCompatActivity() {
-
-    data class MyPicture (val myPictureDesc : String? , val myPictureSrc : Int)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,11 +22,20 @@ class SelectionActivity : AppCompatActivity() {
         // recycler view properties
         val recyclerView : RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(this@SelectionActivity, 2)
-        //recyclerView.adapter = SelectionAdapter(this@SelectionActivity, imageList)
 
+        // create new on-click event listener for recycler view
+        val myOnClickListener = View.OnClickListener {
+            val pos = recyclerView.getChildAdapterPosition(it)
+            selectedImage.setImageResource(imageList[pos].imageSrc)
+            selectedText.text = imageList[pos].imageDesc
+        }
+
+        // finally, create the adapter for the recycler view
+        recyclerView.adapter = SelectionAdapter(this@SelectionActivity, imageList, myOnClickListener)
     }
 
     // declare all image sources and text
+    // < same pictures as last lab, but with different descriptions >
     private fun getImageList(): ArrayList<MyPicture> {
         return arrayListOf(
             MyPicture("Astronaut", R.drawable.astronaut),
