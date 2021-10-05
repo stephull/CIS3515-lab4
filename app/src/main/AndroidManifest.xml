@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SelectionActivity">
         <activity
-            android:name=".DisplayActivity"
-            android:exported="true" />
-        <activity
             android:name=".SelectionActivity"
             android:exported="true">
             <intent-filter>
@@ -21,6 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".DisplayActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
