@@ -10,6 +10,9 @@ class SelectionAdapter (_context : Context, _imageList : ArrayList<MyPicture>) :
     private val context = _context
     private val imageList = _imageList
 
+    // dimensions for layout parameters, display
+    private val wh = 345
+
     interface OnItemClickListener {
         fun onItemClick(pos : Int)
     }
@@ -30,6 +33,9 @@ class SelectionAdapter (_context : Context, _imageList : ArrayList<MyPicture>) :
     // create view holder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val holderItem = LayoutInflater.from(parent.context).inflate(R.layout.recyclerview, parent, false)
+        holderItem.apply {
+            layoutParams = ViewGroup.LayoutParams(wh, wh)
+        }
         return MyViewHolder(holderItem, myListener)
     }
 

@@ -1,37 +1,42 @@
 package edu.temple.selectionactivity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.*
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.*
 
 class SelectionActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_selection)
 
-        // call variables for selecting image + text
-        val selectedImage : ImageView = findViewById(R.id.displayImage)
-        val selectedText : TextView = findViewById(R.id.displayText)
-
-        // object class declaration
+        // declare image list and recyclerview
         val imageList = getImageList()
-
-        // recycler view properties
         val recyclerView : RecyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = GridLayoutManager(this@SelectionActivity, 2)
 
-        // create new on-click event listener for recycler view
-        val myOnClickListener = View.OnClickListener {
-            val pos = recyclerView.getChildAdapterPosition(it)
-            selectedImage.setImageResource(imageList[pos].imageSrc)
-            selectedText.text = imageList[pos].imageDesc
-        }
+        // declare layout manager for recyclerview
+        recyclerView.layoutManager = GridLayoutManager(this@SelectionActivity, 3)
 
-        // finally, create the adapter for the recycler view
-        recyclerView.adapter = SelectionAdapter(this@SelectionActivity, imageList, myOnClickListener)
+        // adapter for image list
+        val adapter = SelectionAdapter(this@SelectionActivity, imageList)
+        recyclerView.adapter = adapter
+
+        // intent for second activity (display)
+        val newIntent = Intent(this, DisplayActivity::class.java)
+
+        // assemble on-click listener using intent for any picture selected
+        adapter.setOnItemClickListener(object : SelectionAdapter.OnItemClickListener {
+            override fun onItemClick(pos: Int) {
+                val item = imageList[pos]
+                newIntent.putExtra("image_text", item.imageDesc)
+                newIntent.putExtra("image_source", item.imageSrc)
+                startActivity(newIntent)
+            }
+        })
     }
 
     // declare all image sources and text
