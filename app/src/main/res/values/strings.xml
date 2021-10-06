@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">SelectionActivity</string>
-    <string name="executable_title">Beautiful Image Viewer App</string>
-    <string name="app_title_label">Beautiful Photos App</string>
-    <string name="display_title_label">New beautiful picture</string>
+    <string name="apk_label">Beautiful Image Viewer App</string>
+    <string name="app_title_label">Selection</string>
+    <string name="display_title_label">Display</string>
     <string name="app_instruct">Select an image for a full view</string>
     <string name="display_test_text">Test text</string>
 </resources>
