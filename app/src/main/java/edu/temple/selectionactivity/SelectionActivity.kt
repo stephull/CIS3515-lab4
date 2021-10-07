@@ -44,7 +44,6 @@ class SelectionActivity : AppCompatActivity() {
     private fun getImageList(): ArrayList<MyPicture> {
         val arr = resources.getStringArray(R.array.display_text_array)
         var i = 0
-
         return arrayListOf(
             MyPicture(arr[i++], R.drawable.astronaut),
             MyPicture(arr[i++], R.drawable.bull),
