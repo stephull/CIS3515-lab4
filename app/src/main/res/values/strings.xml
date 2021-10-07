@@ -5,4 +5,19 @@
     <string name="display_title_label">Display</string>
     <string name="app_instruct">Select an image for a full view</string>
     <string name="display_test_text">Test text</string>
+
+    <string-array name="display_text_array">
+        <item>Astronaut</item>
+        <item>Bull</item>
+        <item>Diver</item>
+        <item>Sunset</item>
+        <item>Lush Forest</item>
+        <item>Over the Horizon</item>
+        <item>Northern Lights</item>
+        <item>Nighttime</item>
+        <item>Rice Terraces</item>
+        <item>Hot Desert</item>
+        <item>Sunrise</item>
+        <item>Waterfall</item>
+    </string-array>
 </resources>

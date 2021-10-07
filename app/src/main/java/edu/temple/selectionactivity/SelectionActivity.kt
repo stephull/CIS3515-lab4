@@ -42,19 +42,22 @@ class SelectionActivity : AppCompatActivity() {
     // declare all image sources and text
     // < same pictures as last lab, but with different descriptions >
     private fun getImageList(): ArrayList<MyPicture> {
+        val arr = resources.getStringArray(R.array.display_text_array)
+        var i = 0
+
         return arrayListOf(
-            MyPicture("Astronaut", R.drawable.astronaut),
-            MyPicture("Bull", R.drawable.bull),
-            MyPicture("Diver", R.drawable.diver),
-            MyPicture("Sunset", R.drawable.dusk),
-            MyPicture("Lush Forest", R.drawable.forest),
-            MyPicture("Over the Horizon", R.drawable.horizon),
-            MyPicture("Northern Lights", R.drawable.lights),
-            MyPicture("Nighttime", R.drawable.night),
-            MyPicture("Rice Terraces", R.drawable.rice_terraces),
-            MyPicture("Hot Desert", R.drawable.sand),
-            MyPicture("Sunrise", R.drawable.sunrise),
-            MyPicture("Waterfall", R.drawable.waterfall)
+            MyPicture(arr[i++], R.drawable.astronaut),
+            MyPicture(arr[i++], R.drawable.bull),
+            MyPicture(arr[i++], R.drawable.diver),
+            MyPicture(arr[i++], R.drawable.dusk),
+            MyPicture(arr[i++], R.drawable.forest),
+            MyPicture(arr[i++], R.drawable.horizon),
+            MyPicture(arr[i++], R.drawable.lights),
+            MyPicture(arr[i++], R.drawable.night),
+            MyPicture(arr[i++], R.drawable.rice_terraces),
+            MyPicture(arr[i++], R.drawable.sand),
+            MyPicture(arr[i++], R.drawable.sunrise),
+            MyPicture(arr[i], R.drawable.waterfall)
         )
     }
 }
