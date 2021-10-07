@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SelectionActivity</string>
     <string name="apk_label">Beautiful Image Viewer App</string>
     <string name="app_title_label">Selection</string>
     <string name="display_title_label">Display</string>
