@@ -4,23 +4,24 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/apk_icon"
+        android:roundIcon="@mipmap/apk_icon_round"
         android:supportsRtl="true"
+        android:label="@string/apk_label"
         android:theme="@style/Theme.SelectionActivity">
         <activity
             android:name=".SelectionActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="@string/app_title_label">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".DisplayActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/display_title_label"/>
     </application>
 
 </manifest>
