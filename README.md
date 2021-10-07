@@ -1,13 +1,17 @@
-## Lab 4 : Selection Activity App
+## Lab 5 : Selection Activity App with Locale Options
 * For Introduction to Mobile Application Development
 
 ## About:
-* Similar to Lab 3, use RecyclerView to display main items; use second display activity to render full image view with text
+* Similar to Lab 4, order string variables/arrays into separate file, and use alternative resources to provide translation of app properties
+* Korean used to provide locale example for this project
 
 ## Screenshots:
-* Before: ![Before](before_lab4.png)
-* After: ![After](after_lab4.png)
-* App Info: ![App Info](appinfo_lab4.png)
+* Selection - English: ![Selection Activity - English](selection-eng.png)
+* Selection - Korean: ![Selection Activity - Korean](selection-kor.png)
+* Display - English: ![Display Activity - English](display-eng.png)
+* Display - Korean: ![Display Activity - Korean](display-kor.png)
+* App Info - English: ![App Info - English](appinfo-eng.png)
+* App Info - Korean: ![App Info - Korean](appinfo-kor.png)
 
 ## Other Information:
-* Last commit made: October 6, 2021 (excluding .apk conversion)
+* Last commit made: October 08, 2021
