@@ -6,12 +6,12 @@
 * Korean used to provide locale example for this project
 
 ## Screenshots:
-* Selection - English: ![Selection Activity - English](selection-eng.png)
-* Selection - Korean: ![Selection Activity - Korean](selection-kor.png)
-* Display - English: ![Display Activity - English](display-eng.png)
-* Display - Korean: ![Display Activity - Korean](display-kor.png)
-* App Info - English: ![App Info - English](appinfo-eng.png)
-* App Info - Korean: ![App Info - Korean](appinfo-kor.png)
+* Selection - English: ![Selection Activity - English](selection_en.png)
+* Selection - Korean: ![Selection Activity - Korean](selection_kr.png)
+* Display - English: ![Display Activity - English](display_en.png)
+* Display - Korean: ![Display Activity - Korean](display_kr.png)
+* App Info - English: ![App Info - English](app_en.png)
+* App Info - Korean: ![App Info - Korean](app_kr.png)
 
 ## Other Information:
-* Last commit made: October 08, 2021
+* Last commit made: October 12, 2021

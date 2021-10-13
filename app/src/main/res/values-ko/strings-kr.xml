@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="apk_label">예쁜 사진 앱</string>
-    <string name="app_title_label">매인메뉴</string>
+    <string name="apk_label">아름다운 사진 앱</string>
+    <string name="app_title_label">선택 액티비티</string>
     <string name="display_title_label">사진</string>
     <string name="app_instruct">보려는 사진을 선택하십시오</string>
     <string name="display_test_text">테스트</string>
@@ -14,9 +14,9 @@
         <item>습한 숲</item>
         <item>산꼭대기</item>
         <item>오르라</item>
-        <item>달</item>
+        <item>밤 시간</item>
         <item>계단밭</item>
-        <item>많은 모래</item>
+        <item>건조한 사막</item>
         <item>화려한 일출</item>
         <item>폭포</item>
     </string-array>

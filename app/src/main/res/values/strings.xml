@@ -9,15 +9,15 @@
     <string-array name="display_text_array">
         <item>Astronaut</item>
         <item>Bull</item>
-        <item>Diver</item>
-        <item>Sunset</item>
+        <item>Diving</item>
+        <item>Sunset and Tree</item>
         <item>Lush Forest</item>
         <item>Over the Horizon</item>
         <item>Northern Lights</item>
         <item>Nighttime</item>
         <item>Rice Terraces</item>
         <item>Hot Desert</item>
-        <item>Sunrise</item>
+        <item>Colorful Sunrise</item>
         <item>Waterfall</item>
     </string-array>
 </resources>
