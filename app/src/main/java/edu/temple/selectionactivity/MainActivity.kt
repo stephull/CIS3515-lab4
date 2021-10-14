@@ -3,40 +3,25 @@ package edu.temple.selectionactivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.*
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.*
 
-class SelectionActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
+    lateinit var selection: SelectionFragment
+    lateinit var display: DisplayFragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_selection)
+        setContentView(R.layout.activity_main)
 
-        // declare image list and recyclerview
-        val imageList = getImageList()
-        val recyclerView : RecyclerView = findViewById(R.id.recyclerView)
+        selection = SelectionFragment()
+        display = DisplayFragment()
 
-        // declare layout manager for recyclerview
-        recyclerView.layoutManager = GridLayoutManager(this@SelectionActivity, 3)
-
-        // adapter for image list
-        val adapter = SelectionAdapter(this@SelectionActivity, imageList)
-        recyclerView.adapter = adapter
-
-        // intent for second activity (display)
-        val newIntent = Intent(this, DisplayActivity::class.java)
-
-        // assemble on-click listener using intent for any picture selected
-        adapter.setOnItemClickListener(object : SelectionAdapter.OnItemClickListener {
-            override fun onItemClick(pos: Int) {
-                val item = imageList[pos]
-                newIntent.putExtra("image_text", item.imageDesc)
-                newIntent.putExtra("image_source", item.imageSrc)
-                startActivity(newIntent)
-            }
-        })
+        supportFragmentManager.beginTransaction()
+            .add(R.id.selection_container, selection)
+            .add(R.id.display_container, display)
+            .commit()
     }
 
     // declare all image sources and text
