@@ -5,8 +5,9 @@
     <string name="display_title_label">사진</string>
     <string name="app_instruct">보려는 사진을 선택하십시오</string>
     <string name="display_test_text">테스트</string>
+    <string name="todo">TODO</string>
 
-    <string-array name="display_text_array">
+    <string-array name="pictures_array">
         <item>우주 비행사</item>
         <item>황소</item>
         <item>스쿠버 다이빙</item>

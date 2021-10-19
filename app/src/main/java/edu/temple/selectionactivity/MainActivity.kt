@@ -8,17 +8,24 @@ import android.widget.*
 import androidx.recyclerview.widget.*
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var selection : SelectionFragment
+    private lateinit var display : DisplayFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val selection = SelectionFragment()
-        val display = DisplayFragment()
+        val instructText = findViewById<TextView>(R.id.instructText)
+        selection = SelectionFragment()
+        display = DisplayFragment()
 
-        supportFragmentManager.beginTransaction()
-            .add(R.id.selection_container, selection)
-            .add(R.id.display_container, display)
+        // fragment manager for transaction and execution of fragment(s)
+        this@MainActivity.supportFragmentManager.beginTransaction()
+            .add(R.id.displayFCV, display)
+            .add(R.id.selectionFCV, selection)
             .commit()
+
+
+
     }
 }

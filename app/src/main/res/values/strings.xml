@@ -5,8 +5,9 @@
     <string name="display_title_label">Display</string>
     <string name="app_instruct">Select an image for a full view</string>
     <string name="display_test_text">Test text</string>
+    <string name="todo">TODO</string>
 
-    <string-array name="display_text_array">
+    <string-array name="pictures_array">
         <item>Astronaut</item>
         <item>Bull</item>
         <item>Diving</item>
