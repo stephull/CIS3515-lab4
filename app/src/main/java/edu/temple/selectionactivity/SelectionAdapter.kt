@@ -15,7 +15,6 @@ class SelectionAdapter(_context: Context, _imageList: ArrayList<MyPicture>) : Re
     interface OnItemClickListener {
         fun onItemClick(pos: Int)
     }
-
     private lateinit var myListener : OnItemClickListener
     fun setOnItemClickListener(listener: OnItemClickListener) {
         myListener = listener
@@ -44,7 +43,5 @@ class SelectionAdapter(_context: Context, _imageList: ArrayList<MyPicture>) : Re
     }
 
     // get size of image list
-    override fun getItemCount() : Int {
-        return imageList.size
-    }
+    override fun getItemCount() = imageList.size
 }

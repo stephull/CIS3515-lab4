@@ -3,46 +3,56 @@ package edu.temple.selectionactivity
 import android.os.Bundle
 import android.view.*
 import android.widget.*
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class SelectionFragment : Fragment() {
     private lateinit var mainView : RecyclerView
-    private lateinit var instructText : TextView
+    private lateinit var vmp : ViewModelProvider
+    private lateinit var newMyPicture : ArrayList<MyPicture>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        newMyPicture = arguments?.getParcelableArrayList("MyPictureList")!!
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val layout = inflater.inflate(R.layout.activity_selection, container, false)
+        mainView = RecyclerView(requireActivity())
+        mainView.layoutManager = GridLayoutManager(requireContext(), 3)
 
+        val adapter = SelectionAdapter(requireContext(), newMyPicture)
+        mainView.adapter = adapter
+        adapter.setOnItemClickListener(object: SelectionAdapter.OnItemClickListener {
+            override fun onItemClick(pos: Int) {
+                val item = newMyPicture[pos]
+            }
+        })
 
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return layout
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        vmp = ViewModelProvider(requireActivity())
+        changeMyPicture(newMyPicture)
     }
 
-    // declare all image sources and text
-    // < same pictures as last lab, but with different descriptions >
-    private fun getImageList(): ArrayList<MyPicture> {
-        val arr = resources.getStringArray(R.array.display_text_array)
-        var i = 0
-        return arrayListOf(
-            MyPicture(arr[i++], R.drawable.astronaut),
-            MyPicture(arr[i++], R.drawable.bull),
-            MyPicture(arr[i++], R.drawable.diver),
-            MyPicture(arr[i++], R.drawable.dusk),
-            MyPicture(arr[i++], R.drawable.forest),
-            MyPicture(arr[i++], R.drawable.horizon),
-            MyPicture(arr[i++], R.drawable.lights),
-            MyPicture(arr[i++], R.drawable.night),
-            MyPicture(arr[i++], R.drawable.rice_terraces),
-            MyPicture(arr[i++], R.drawable.sand),
-            MyPicture(arr[i++], R.drawable.sunrise),
-            MyPicture(arr[i], R.drawable.waterfall)
-        )
+    private fun changeMyPicture(pos : ArrayList<MyPicture>?) {
+        if (pos != null) {
+            //mainView.setSelection(pos)
+        }
+    }
+
+    companion object {
+        fun newInstance (pictures : ArrayList<MyPicture>) : SelectionFragment {
+            return SelectionFragment().apply {
+                Bundle().apply {
+                    putParcelableArrayList("MyPictureList", pictures)
+                }
+            }
+        }
     }
 }
