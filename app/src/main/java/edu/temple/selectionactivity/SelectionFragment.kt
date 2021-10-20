@@ -1,58 +1,58 @@
 package edu.temple.selectionactivity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class SelectionFragment : Fragment() {
-    private lateinit var mainView : RecyclerView
-    private lateinit var vmp : ViewModelProvider
-    private lateinit var newMyPicture : ArrayList<MyPicture>
+    private lateinit var adapter : SelectionAdapter
+    private lateinit var viewModel : MyViewModel
+    private lateinit var myPictureList : ArrayList<MyPicture>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        newMyPicture = arguments?.getParcelableArrayList("MyPictureList")!!
+        myPictureList = arguments?.getParcelableArrayList<MyPicture>("MyPictureList") as ArrayList<MyPicture>
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val layout = inflater.inflate(R.layout.activity_selection, container, false)
-        mainView = RecyclerView(requireActivity())
+        val mainView : RecyclerView = layout.findViewById(R.id.imageMenu)
         mainView.layoutManager = GridLayoutManager(requireContext(), 3)
 
-        val adapter = SelectionAdapter(requireContext(), newMyPicture)
+        adapter = SelectionAdapter(requireContext(), myPictureList)
         mainView.adapter = adapter
-        adapter.setOnItemClickListener(object: SelectionAdapter.OnItemClickListener {
-            override fun onItemClick(pos: Int) {
-                val item = newMyPicture[pos]
-            }
-        })
-
         return layout
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        vmp = ViewModelProvider(requireActivity())
-        changeMyPicture(newMyPicture)
+        viewModel = ViewModelProvider(requireActivity()).get(MyViewModel::class.java)
+        adapter.setOnItemClickListener(object: SelectionAdapter.OnItemClickListener {
+            override fun onItemClick(pos: Int) {
+                val item = myPictureList[pos]
+                // do ViewModelProvider stuff here
+            }
+        })
     }
 
-    private fun changeMyPicture(pos : ArrayList<MyPicture>?) {
-        if (pos != null) {
-            //mainView.setSelection(pos)
+    // is this necessary???
+    private fun changeMyPicture(picture : MyPicture?) {
+        if (picture != null) {
+            viewModel.setMyPicture(picture)
         }
     }
 
     companion object {
         fun newInstance (pictures : ArrayList<MyPicture>) : SelectionFragment {
-            return SelectionFragment().apply {
-                Bundle().apply {
-                    putParcelableArrayList("MyPictureList", pictures)
-                }
-            }
+            val fragment = SelectionFragment()
+            val bundle = Bundle()
+            bundle.putParcelableArrayList("MyPictureList", pictures)
+            fragment.arguments = bundle
+            return fragment
         }
     }
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
 import android.widget.*
+import androidx.fragment.app.commit
 import androidx.recyclerview.widget.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,10 +17,10 @@ class MainActivity : AppCompatActivity() {
         val displayFragment = DisplayFragment()
 
         // fragment manager for transaction and execution of fragment(s)
-        supportFragmentManager.beginTransaction()
-            .add(R.id.selectionFCV, selectionFragment, "selection_tag")
-            .add(R.id.displayFCV, displayFragment, "display_tag")
-            .commit()
+        supportFragmentManager.commit {
+            add(R.id.selectionFCV, selectionFragment)
+            add(R.id.displayFCV, displayFragment)
+        }
     }
 
     // declare all image sources and text

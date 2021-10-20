@@ -4,26 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4E0B7"
     tools:layout_editor_absoluteX="-30dp"
     tools:layout_editor_absoluteY="-454dp">
 
     <ImageView
         android:id="@+id/selectedImage"
-        android:layout_width="320dp"
-        android:layout_height="320dp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:contentDescription="@string/todo"
         app:layout_constraintBottom_toTopOf="@+id/selectedImageText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.676" />
+        app:layout_constraintVertical_bias="0.493" />
 
     <TextView
         android:id="@+id/selectedImageText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="84dp"
         android:text="@string/display_test_text"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"

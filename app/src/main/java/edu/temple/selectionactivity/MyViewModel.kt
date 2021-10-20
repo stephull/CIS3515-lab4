@@ -5,13 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MyViewModel : ViewModel() {
-    private var display = MutableLiveData<MyPicture>()
-
-    fun getMyPicture() : LiveData<MyPicture> {
-        return display
-    }
-
-    fun setMyPicture(_display : MyPicture) {
-        display.value = _display
+    val modelItem = MutableLiveData<MyPicture>()
+    fun getMyPicture() : LiveData<MyPicture> = modelItem
+    fun setMyPicture(newItem : MyPicture) {
+        modelItem.value = newItem
     }
 }
