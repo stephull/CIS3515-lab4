@@ -4,7 +4,7 @@
     <string name="app_title_label">선택 액티비티</string>
     <string name="display_title_label">사진</string>
     <string name="app_instruct">보려는 사진을 선택하십시오</string>
-    <string name="display_test_text">테스트</string>
+    <string name="display_test_text"></string>
     <string name="todo">TODO</string>
 
     <string-array name="pictures_array">

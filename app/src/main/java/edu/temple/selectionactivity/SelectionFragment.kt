@@ -34,16 +34,9 @@ class SelectionFragment : Fragment() {
         adapter.setOnItemClickListener(object: SelectionAdapter.OnItemClickListener {
             override fun onItemClick(pos: Int) {
                 val item = myPictureList[pos]
-                // do ViewModelProvider stuff here
+                viewModel.setMyPicture(item)
             }
         })
-    }
-
-    // is this necessary???
-    private fun changeMyPicture(picture : MyPicture?) {
-        if (picture != null) {
-            viewModel.setMyPicture(picture)
-        }
     }
 
     companion object {

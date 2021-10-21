@@ -4,19 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CAF3EB"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/instructText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="0sp"
-        android:paddingBottom="0sp"
+        android:padding="2sp"
         android:text="@string/app_instruct"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:textAlignment="center" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/displayFCV"
