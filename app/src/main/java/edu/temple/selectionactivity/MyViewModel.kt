@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MyViewModel : ViewModel() {
-    val modelItem = MutableLiveData<MyPicture>()
+    private val modelItem = MutableLiveData<MyPicture>()
     fun getMyPicture() : LiveData<MyPicture> = modelItem
     fun setMyPicture(newItem : MyPicture) {
         modelItem.value = newItem

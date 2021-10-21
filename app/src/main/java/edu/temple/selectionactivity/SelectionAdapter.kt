@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 
-class SelectionAdapter(_context: Context, _imageList: ArrayList<MyPicture>) : RecyclerView.Adapter<SelectionAdapter.MyViewHolder>(){
+class SelectionAdapter(_context: Context, _imageList: ArrayList<MyPicture>) : RecyclerView.Adapter<SelectionAdapter.MyViewHolder>() {
     private val context = _context
     private val imageList = _imageList
     private val wh = 345

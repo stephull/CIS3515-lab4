@@ -7,8 +7,7 @@ data class MyPicture(val imageDesc : String? , val imageSrc : Int) : Parcelable 
     constructor(parcel: Parcel) : this(
         parcel.readString().toString(),
         parcel.readInt()
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(imageDesc)
